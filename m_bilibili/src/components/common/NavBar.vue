@@ -1,7 +1,7 @@
 <template>
   <div class="navBar">
     <div class="logo">
-      <i class="iconfont icon-bilibili"></i>
+
     </div>
     <div></div>
     <div></div>
@@ -14,4 +14,8 @@
 	}
 </script>
 <style scoped>
+
+
+  
+
 </style>
