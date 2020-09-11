@@ -1,0 +1,86 @@
+{
+  "id": "2060053",
+  "name": "bilibili",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "119107",
+      "name": "转发",
+      "font_class": "zhuanfa",
+      "unicode": "e6c4",
+      "unicode_decimal": 59076
+    },
+    {
+      "icon_id": "579286",
+      "name": "点赞",
+      "font_class": "dianzan",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "1582439",
+      "name": "icon_置顶",
+      "font_class": "icon_zhiding",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "1977010",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "2306764",
+      "name": "BILIBILI_LOGO",
+      "font_class": "bilibili",
+      "unicode": "e6b4",
+      "unicode_decimal": 59060
+    },
+    {
+      "icon_id": "3315125",
+      "name": "收藏",
+      "font_class": "shoucang",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "5876892",
+      "name": "点赞",
+      "font_class": "biaoqing",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "6999491",
+      "name": "播放",
+      "font_class": "tuya-",
+      "unicode": "e75a",
+      "unicode_decimal": 59226
+    },
+    {
+      "icon_id": "9149165",
+      "name": "评论",
+      "font_class": "pinglun",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "15160658",
+      "name": "下载文件",
+      "font_class": "xiazaiwenjian",
+      "unicode": "e69b",
+      "unicode_decimal": 59035
+    },
+    {
+      "icon_id": "16388240",
+      "name": "清晰度",
+      "font_class": "qingxidu",
+      "unicode": "e673",
+      "unicode_decimal": 58995
+    }
+  ]
+}

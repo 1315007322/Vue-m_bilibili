@@ -5,7 +5,7 @@ import store from './store'
 import Vant from 'vant'
 import 'vant/lib/index.css'
 import http from "../http"
-import { Toast } from 'vant';
+import { Toast } from 'vant'
 Vue.use(Vant);
 Vue.prototype.$http = http
 Vue.prototype.$msg = Toast

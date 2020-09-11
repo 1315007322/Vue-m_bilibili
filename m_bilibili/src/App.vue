@@ -5,7 +5,10 @@
 </template>
 
 <style lang="less">
-
+  p{
+    padding: 0;
+    margin: 0;
+  }
   body{
     margin: 0;
     padding: 0;
