@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="editbaner">
+    <div class="editbaner" @click="bannerClick()">
       <span>{{left}}</span>
       <span><slot name="right"></slot></span>
     </div>
@@ -11,7 +11,11 @@
 	export default {
 		name: "editBaner",
     props: ['left' , 'right'],
-
+    methods: {
+			bannerClick(){
+				this.$emit('bannerClick')
+      }
+    }
 
 	}
 </script>
