@@ -1,8 +1,8 @@
 <template>
   <div class="userInfo">
-    <NavBar></NavBar>
+    <NavBar :userInfo="model"></NavBar>
     <div class="banner"> </div>
-    <userDetails :usrInfo="model"></userDetails>
+    <userDetails :userInfo="model"></userDetails>
   </div>
 </template>
 
@@ -26,7 +26,6 @@
 	      const res = await this.$http.get('/user/' + localStorage.getItem('id'),)
 
         this.model = res.data[0]
-
       }
     },
     created() {

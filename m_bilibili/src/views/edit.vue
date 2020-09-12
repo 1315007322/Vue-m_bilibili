@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="edit">
     <NavBar></NavBar>
     <div class="up_pic" style="margin-top: 3vw">
       <van-uploader  preview-size="100vw" :after-read="afterRead"/>
@@ -8,7 +8,6 @@
         <img src="@/assets/img/info.jpg" alt="" slot="right" v-else >
       </editBaner>
     </div>
-
     <editBaner left="昵称" @bannerClick="show = true">
       <a href="javascript:;" slot="right">{{model.name}}</a>
     </editBaner>
@@ -21,26 +20,26 @@
     <editBaner left="性别"  slot="right" @bannerClick="genderShow = true">
       <a href="javascript:;" slot="right">{{model.gender == 1 ? '男' : '女'}}</a>
     </editBaner>
-
     <editBaner left="个性签名"  slot="right" @bannerClick="TextShow = true">
       <a href="javascript:;" slot="right">{{model.user_desc}}</a>
     </editBaner>
-
     <van-dialog v-model="show" title="昵称" show-cancel-button @confirm="confirm()">
       <van-field v-model="content"  autofocus
       />
     </van-dialog>
-
-
     <van-dialog v-model="TextShow" title="个性签名" show-cancel-button @confirm="confirm()">
       <van-field v-model="GxText"  autofocus
       />
     </van-dialog>
-
-
     <van-action-sheet v-model="genderShow" cancel-text="取消" :actions="actions" @select="onSelect" close-on-click-action
 
     />
+    <p class="back exit">
+      退出登录
+    </p>
+    <p class="back" @click="$router.push('/userInfo')">
+      返回空间
+    </p>
 
   </div>
 </template>
@@ -115,6 +114,21 @@
       top: 0;
       width: 100%;
       opacity: 0;
+    }
+  }
+  .edit{
+    .exit{
+      margin-top: 5vw;
+    }
+    .back{
+      display: block;
+      padding: 2.66667vw;
+      text-align: center;
+      color: #505050;
+      text-decoration: none;
+      background: #fff;
+      font-size: 3.73333vw;
+      border-bottom: 1px solid #eee;
     }
   }
 

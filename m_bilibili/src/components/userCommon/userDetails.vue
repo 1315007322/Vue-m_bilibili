@@ -2,7 +2,7 @@
   <div class="userDetail">
     <div>
       <div class="user_pic">
-        <img src="@/assets/img/info.jpg" alt="">
+        <img :src="userInfo.user_img" alt="">
       </div>
       <div class="user_edit">
         <div class="user_edit_top">
@@ -15,8 +15,8 @@
     </div>
 
     <div>
-      <span class="name">精神小伙欢乐多</span>
-      <p>该用户很懒，什么也没写- - </p>
+      <span class="name">{{userInfo.name}}</span>
+      <p>{{userInfo.user_desc}}</p>
     </div>
 
   </div>
@@ -24,7 +24,13 @@
 
 <script>
 	export default {
-		name: "userDetails"
+		name: "userDetails",
+    props: ['userInfo'],
+    data(){
+			return {
+
+      }
+    }
 	}
 </script>
 
