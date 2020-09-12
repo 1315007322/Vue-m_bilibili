@@ -2,7 +2,7 @@
   <div class="userInfo">
     <NavBar></NavBar>
     <div class="banner"> </div>
-    <userDetails></userDetails>
+    <userDetails :usrInfo="model"></userDetails>
   </div>
 </template>
 
@@ -13,6 +13,24 @@
     components: {
     	NavBar,
 	    userDetails
+    },
+    data(){
+    	return {
+    		model: {
+
+        }
+      }
+    },
+    methods: {
+      async userinfoData(){
+	      const res = await this.$http.get('/user/' + localStorage.getItem('id'),)
+
+        this.model = res.data[0]
+
+      }
+    },
+    created() {
+    	this.userinfoData()
     }
 	}
 </script>

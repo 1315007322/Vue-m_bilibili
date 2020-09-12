@@ -48,6 +48,15 @@
 					const res = await this.$http.post('/login', this.model)
 					this.$msg.success(res.data.msg)
 					/*-------------------------------------------*/
+					if(res.data.code == 301 || res.data == 302){
+						return
+					}
+					console.log(res);
+					localStorage.setItem('token',res.data.token)
+          localStorage.setItem('id',res.data.id)
+          setTimeout(() => {
+          	this.$router.push('/userInfo')
+          },1000)
 				}else {
 					this.$msg.fail('格式不正确')
 				}
