@@ -4,10 +4,14 @@ import register from '../views/register'
 import Login from "../views/Login"
 import userInfo from "../views/userInfo"
 import edit from "../views/edit";
+import Home from '../views/Home'
 Vue.use(VueRouter)
 
   const routes = [
-
+    {
+      path: '/',
+      component: Home
+    },
   {
     path: '/register',
     component: register
