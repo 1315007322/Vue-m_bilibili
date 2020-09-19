@@ -6,7 +6,7 @@ import Vant from 'vant'
 import 'vant/lib/index.css'
 import http from "../http"
 import { Toast } from 'vant'
-
+import '@/assets/icon/iconfont.css'
 Vue.use(Vant);
 Vue.prototype.$http = http
 Vue.prototype.$msg = Toast

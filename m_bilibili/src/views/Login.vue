@@ -49,14 +49,15 @@
 					this.$msg.success(res.data.msg)
 					/*-------------------------------------------*/
 					if(res.data.code == 301 || res.data == 302){
+
 						return
 					}
 					console.log(res);
 					localStorage.setItem('token',res.data.token)
           localStorage.setItem('id',res.data.id)
-          setTimeout(() => {
-          	this.$router.push('/userInfo')
-          },1000)
+					setTimeout(() => {
+						this.$router.push('/')
+					},1000)
 				}else {
 					this.$msg.fail('格式不正确')
 				}
@@ -67,6 +68,6 @@
 	}
 </script>
 
-<style scoped>
+<style scoped lang="less">
 
 </style>

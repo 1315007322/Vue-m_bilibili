@@ -1,7 +1,8 @@
 <template>
   <div class="navBar">
     <div class="logo">
-      <img src="@/assets/img/logo.png" alt="">
+      <img src="@/assets/img/logo.png" alt="" @click="$router.push('/')">
+
     </div>
     <div class="search">
       <div>
@@ -10,7 +11,8 @@
       </div>
     </div>
     <div>
-      <img :src="img_url" alt="" @click="$router.push('/edit')">
+      <img :src="img_url" alt="" @click="$router.push('/edit')" v-if="img_url">
+      <img src="@/assets/img/info.jpg" alt="" v-if="!img_url" @click="$router.push('/Login')">
       <p>下载APP</p>
     </div>
   </div>
@@ -25,11 +27,12 @@
       }
     },
 		async mounted() {
+			if (localStorage.getItem('token')){
+				const res = await this.$http.get('/user/' + localStorage.getItem('id'),)
+				this.img_url = res.data[0].user_img
+			}
 
-		    const res = await this.$http.get('/user/' + localStorage.getItem('id'),)
-
-        this.img_url = res.data[0].user_img
-		}
+		},
 	}
 </script>
 <style scoped lang="less">

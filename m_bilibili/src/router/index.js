@@ -5,12 +5,16 @@ import Login from "../views/Login"
 import userInfo from "../views/userInfo"
 import edit from "../views/edit";
 import Home from '../views/Home'
+import Article from "../views/Article";
 Vue.use(VueRouter)
 
   const routes = [
     {
       path: '/',
-      component: Home
+      component: Home,
+      meta: {
+        keeplive: true
+      }
     },
   {
     path: '/register',
@@ -34,6 +38,10 @@ Vue.use(VueRouter)
       istoken: true
     }
   },
+    {
+      path: '/article/:id',
+      component: Article
+    },
 
 ]
 
