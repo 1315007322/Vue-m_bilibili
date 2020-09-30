@@ -30,8 +30,8 @@
       <div class="detailparent">
         <Cover v-for="(item,index) in commendList"  :key="index" :detailitem="item" class="detailitem"></Cover>
       </div>
-      <commentTitle></commentTitle>
-      <comment></comment>
+      <commentTitle :datalength="lens" @Postcomment="postSuccess"></commentTitle>
+      <comment @lengthSelect="len => lens=len"></comment>
     </div>
 
   </div>
@@ -50,6 +50,13 @@
         commendList: null,
         myUser: {
 
+        },
+        lens:null,
+        PostCom: {
+					comment_content: '',
+	        comment_date: '',
+	        parent_id: null,
+	        article_id: null,
         }
       }
     },
@@ -73,7 +80,24 @@
 
 	      console.log(res);
 				this.myUser = res.data[0]
-      }
+      },
+	    async postSuccess(res){
+				const date = new Date();
+		    let m = date.getMonth()+1;
+				let d = date.getDate();
+				if (m<10){
+					m = '0' + m
+        }
+				if (d<10){
+					d = '0' + d
+        }
+        this.PostCom.comment_date = `${m}-${d}`
+		   this.PostCom.comment_content = res
+        this.PostCom.article_id = this.$route.params.id
+		    console.log(this.PostCom);
+		    const  result= await this.$http.post('/comment_post/' + localStorage.getItem('id'),this.PostCom);
+		    console.log(result);
+	    }
     },
     watch:{
 			$route(){
@@ -84,7 +108,6 @@
     created() {
 			this.articleitemData()
       this.commendData()
-
     }
 	}
 </script>

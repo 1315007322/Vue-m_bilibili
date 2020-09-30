@@ -1,13 +1,13 @@
 <template>
   <div class="comment">
     <p class="comment_title">
-      <span>评论</span> <span>(4028)</span>
+      <span>评论</span> <span>({{datalength}})</span>
     </p>
     <div class="comment_ipt">
       <img  :src="myUser.user_img" alt="" v-if="myUser">
       <img  src="@/assets/img/info.jpg" alt="" v-else>
-      <input type="text" placeholder="说点什么">
-      <button>发表</button>
+      <input type="text" placeholder="说点什么" v-model="comContent">
+      <button @click="commentPublish">发表</button>
     </div>
   </div>
 </template>
@@ -15,9 +15,11 @@
 <script>
 	export default {
 		name: "comment",
+    props:['datalength'],
     data(){
 			return {
-				myUser: null
+				myUser: null,
+        comContent:''
       }
     },
     methods: {
@@ -30,6 +32,7 @@
 	    		this.$msg.fail('请先登录')
           return
         }
+	    	this.$emit('Postcomment',this.comContent)
       }
     },
 		created() {

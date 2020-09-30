@@ -52,7 +52,6 @@
 
 						return
 					}
-					console.log(res);
 					localStorage.setItem('token',res.data.token)
           localStorage.setItem('id',res.data.id)
 					setTimeout(() => {
